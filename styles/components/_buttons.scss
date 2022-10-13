@@ -1,0 +1,33 @@
+.btn-login {
+    width: 100%!important;
+}
+.btn-send {
+    background: var(--upch-primary);
+    border: 1px solid var(--upch-primary);
+    color: white;
+    width: 205px;
+    height: 38px;
+    border-radius: 10px;
+    font-size: 16px;
+    padding-bottom: 7px;
+	&:hover {
+		color: #ffffff;
+    	background-color: var(--upch-primary-dark);
+    	border: 1px solid var(--upch-primary-dark);
+	}
+}
+.btn-primary {
+	background: var(--upch-primary)!important;
+    border: 1px solid var(--upch-primary)!important;
+    color: white;
+	border-radius: 0.45rem;
+	&:hover {
+		color: #ffffff;
+    	background-color: var(--upch-primary-dark)!important;
+    	border: 1px solid var(--upch-primary-dark)!important;
+	}
+	&:focus {
+		box-shadow: none!important;
+		outline: 0!important;
+	}
+}

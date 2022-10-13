@@ -1,0 +1,50 @@
+body {
+    background-color: var(--upch-web-bg);
+    overflow-x: hidden;
+	margin: 0;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-upch);
+    font-weight: 500;
+}
+
+p, label, a , select, input, span, button{
+    font-family: var(--font-upch);
+    font-weight: 300;
+    
+}
+
+::selection {
+    background: var(--upch-primary-dark)!important;
+    color: white;
+  }
+
+p, label, a {
+    font-size: 15px;
+}
+
+:focus {
+    outline: none;
+  }
+  
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+a {
+    color: var(--upch-primary-dark);
+    &:hover { 
+        color: var(--upch-primary-dark);
+    }
+}
+
+.home .container-fluid {
+    padding-right: 0;
+}
+.container-fluid .main {
+    height: calc(100vh - 45px);
+    width: 100%;
+    padding-top: 64px;
+    overflow-y: scroll;
+}
