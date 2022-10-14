@@ -9,14 +9,15 @@ body {
     font-weight: 500;
 }
 
-p, label, a , select, input, span, button{
+p, label, a , select, input, span, button, small{
     font-family: var(--font-upch);
     font-weight: 300;
     
 }
 
+
 ::selection {
-    background: var(--upch-primary-dark)!important;
+    background: var(--upch-black)!important;
     color: white;
   }
 
@@ -42,9 +43,12 @@ a {
 .home .container-fluid {
     padding-right: 0;
 }
-.container-fluid .main {
+.home .container-fluid .main {
     height: calc(100vh - 45px);
     width: 100%;
     padding-top: 64px;
     overflow-y: scroll;
+    // @media (max-width: 844px) {
+    //     height: 100vh;
+    // }
 }

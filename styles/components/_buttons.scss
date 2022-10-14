@@ -31,3 +31,9 @@
 		outline: 0!important;
 	}
 }
+
+.btn-check:active+.btn-outline-danger, .btn-check:checked+.btn-outline-danger, .btn-outline-danger.active, .btn-outline-danger.dropdown-toggle.show, .btn-outline-danger:active {
+    color: #fff;
+    background-color: var(--upch-primary) !important;
+    border-color: var(--upch-primary) !important;
+}

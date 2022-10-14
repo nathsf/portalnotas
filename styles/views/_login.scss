@@ -77,7 +77,8 @@
 
             }
         }
-        .log-title {            
+        .log-title {     
+            width: -moz-fit-content;       
             width: fit-content;
             margin-bottom: 0.9rem;
             .separator {
@@ -123,6 +124,7 @@
     .carousel-caption {
         bottom: 3.25rem;
         background: rgba(176, 19, 51, 0.57);
+        -webkit-backdrop-filter:blur(8px);
         backdrop-filter: blur(8px);
         border-radius: 6px;
         padding: 1.5rem;

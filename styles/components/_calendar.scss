@@ -3,6 +3,9 @@
   }
   #calendar {
     font-family: var(--font-upch)!important;
+    a {
+      color: #231f1f;
+    }
   
   }
   .fc-toolbar-title {
@@ -44,11 +47,15 @@
       }
       
       .fc-day-today {
-        background-color: rgb(236 236 236 / 50%) ;
-      }
+        background-color: rgb(255 253 242)!important;
+            }
       
       .fc-day-past {
-        background-color: #f7edee;
+        background-color: #f8f8f8!important;
+        .fc-daygrid-day-number {
+          color: #919191!important;
+        }
+      
       }
       
       th.fc-day-today{
@@ -111,7 +118,7 @@
     padding: 5px 4px;
     color: black;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
   }
   
@@ -147,6 +154,7 @@
   
   .fc .fc-button .fc-icon {
     font-size: 1.3em;
+    line-height: 0.7;
   }
   
   .fc-col-header-cell, .fc-timegrid-axis {
@@ -169,8 +177,31 @@
     }
   }
   
-  
+  .fc-dayGridMonth-button, .fc-timeGridWeek-button {
+    color: rgb(0, 0, 0)!important;
+    padding: 0.25rem 0.8rem!important;
+  } 
+
+  .fc-daygrid-event {
+    word-break: break-all;
+    width: 100%;
+    overflow: hidden;
+    font-size: 12px;
+    display: block;
+    word-wrap: break-word;
+    color: #231f1f!important;
+  }
+  .fc-daygrid-day-number {
+    color: #231f1f;
+  }
+
   @media(max-width:767px){
+    .fc .fc-view-harness {
+      min-height: 250.444px!important;
+    }
+    .fc .fc-toolbar.fc-header-toolbar {
+      margin-bottom: 0!important;
+    }
     .fc-theme-standard .fc-list {
       border: 1px solid rgba(238, 238, 238, 1)!important;
       border-radius: 6px;
@@ -189,9 +220,40 @@
     color: black;
       text-decoration: none;
   }
+  .fc .fc-toolbar {
+      display: block;
+      text-align: center;
+    }
+    .fc .fc-toolbar-title {
+      margin: 1rem 0 0 0;
+    }
+    .fc-dayGridMonth-button, .fc-listWeek-button {
+      display: none!important;
+    }
+
   }
 
-  .fc-dayGridMonth-button, .fc-timeGridWeek-button {
-    color: rgb(0, 0, 0)!important;
-    padding: 0.25rem 0.8rem!important;
-  } 
+ 
+  .tooltip.bs-tooltip-top .tooltip-inner {
+    background-color: white;
+    }
+  .tooltip.bs-tooltip-top .tooltip-inner {
+    background-color: white;
+    color: black;
+    box-shadow: 0px 0px 4px 1px rgb(205 205 205);
+    opacity: 1!important;
+    max-width:250px;
+    top: 50px;
+    font-size: 11px;
+    text-align: left;
+    ul{
+      padding: 0;
+      li {
+        list-style: none;
+      }
+    }
+  }
+  .tooltip.bs-tooltip-top .tooltip-arrow:before {
+    border-top-color: white;
+  }
+

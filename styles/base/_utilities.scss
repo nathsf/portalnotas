@@ -1,7 +1,9 @@
 .red-primary {
 	color: var(--upch-primary);
 }
-
+.fw-bold {
+    font-weight: 600!important;
+}
 .container-checkbox {
 	display: block;
 	position: relative;
@@ -73,4 +75,11 @@
 
 .fw-regular {
 	font-weight: 400;
+}
+
+.fw-medium {
+	font-weight: 500;
+}
+.fs-14 { 
+	font-size: 14px;
 }
