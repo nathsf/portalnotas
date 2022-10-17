@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png" />
+    <title>Portal Notas - Registro Notas</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha512-rRQtF4V2wtAvXsou4iUAs2kXHi3Lj9NE7xJR77DE7GHsxgY9RTWy93dzMXgDIG8ToiRTD45VsDNdTiUagOFeZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
+
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body class="home">
+    <div class="header">
+        <nav class="navbar navbar-light navbar-expand-md bg-white justify-content-center">
+            <div class="container">
+                <a href="/" class="navbar-brand d-flex w-50 me-auto">
+                    <img src="assets/img/logo.png">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar3">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="navbar-collapse collapse w-100 " id="collapsingNavbar3">
+                   
+                    <ul class="nav navbar-nav justify-content-end ms-auto w-100  order-wrapper">
+                      <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                        <li class="nav-item d-block d-sm-block d-md-none three me-3">
+                            <a class="nav-link" href="index.html">
+                              <div class="d-inline-flex me-1 home-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+                              </div>
+                                Inicio</a>
+                        </li>
+                       
+                        
+                        
+                        <li class="nav-item d-block d-sm-block d-md-none fourth ">
+                            <a class="nav-link logout fs-sm fourth border-top mt-2 me-3" href="../login/index.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M534.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L434.7 224 224 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM192 96c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-53 0-96 43-96 96l0 256c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z"/></svg>
+                             Cerrar sesión</a>
+                        </li>
+            
+                        
+                        <li class="nav-item me-3 noti-display d-none">
+                            <a class=" nav-link dropdown-toggle icon-noti   waves-effect waves-dark position-relative
+                       " href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                            <span class="badge rounded-pill bg-warning noti">3</span>
+                            </a>
+                        </li>
+
+                        
+                        <li class="nav-item dropdown d-flex  one profile-info">
+                            <div class="d-flex align-items-center">
+                                <p>Hector Cantaro Segura <br> <span class=" ">Docente</span></p>
+                            </div>
+                            <a class="nav-link dropdown-toggle toggle-profile pe-4" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <div class="border border-2 border-bs-gray-200  crop crop-round-40">
+                                <!-- <img src="../../assets/profile.png" alt="user" class="profile-pic"> -->
+                            <span >HC</span>
+                            </div> 
+                            </a>
+                            
+                            <ul class="dropdown-menu dropdown-menu-right user-display" aria-labelledby="navbarScrollingDropdown">
+                                <li><a href="#" class="dropdown-item fs-sm "><i class="far fa-envelope me-2"></i>hector.cantaro@upch.pe</a></li>
+                                <li class="d-none"><a class="dropdown-item fs-sm" href="#"> <i class="far fa-user fs-sm me-2 "></i>
+                                  Mi Perfil</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item logout fs-sm" href="../login/index.html">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M534.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L434.7 224 224 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM192 96c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-53 0-96 43-96 96l0 256c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z"/></svg>
+                                   Cerrar sesión</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+
+    </div>
+    <div class="container-fluid notas">
+        <div class="sidebar">
+            <div class="sidebartop d-flex">
+                <div class="logo">
+                    <img src="assets/img/logo-blanco.png" alt="">
+                </div>
+                <!-- <div class="logo-mobile">
+                    <img src="assets/img/logo-icon.png" alt="">
+                </div> -->
+                <div class="menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.5" d="M9.73427 12.5656L5.54997 16.7499C5.13577 17.1641 5.13577 17.8357 5.54997 18.2499C5.96417 18.6641 6.63577 18.6641 7.04997 18.2499L12.5929 12.707C12.9834 12.3165 12.9834 11.6833 12.5929 11.2928L7.04997 5.74989C6.63577 5.33569 5.96417 5.33569 5.54997 5.74989C5.13577 6.16409 5.13577 6.83569 5.54997 7.24989L9.73427 11.4342C10.0467 11.7466 10.0467 12.2532 9.73427 12.5656Z" fill="white"/>
+                        <path d="M15.7343 12.5656L11.55 16.7499C11.1358 17.1641 11.1358 17.8357 11.55 18.2499C11.9642 18.6641 12.6358 18.6641 13.05 18.2499L18.5928 12.707C18.9834 12.3165 18.9834 11.6833 18.5928 11.2928L13.05 5.74989C12.6358 5.33569 11.9642 5.33569 11.55 5.74989C11.1358 6.16409 11.1358 6.83569 11.55 7.24989L15.7343 11.4342C16.0467 11.7466 16.0467 12.2532 15.7343 12.5656Z" fill="white"/>
+                        </svg>
+                        
+                </div>
+            </div>
+            <!-- <div class="search">
+                <form action="">
+                    <button type="submit" class="callSearch"><i class="bi bi-search"></i></button><input type="text" placeholder="Search" class="searchInput">
+                </form>
+            </div> -->
+            <div class="divider">
+
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="dashboard.html" >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 2H4C2.89543 2 2 2.89543 2 4V9C2 10.1046 2.89543 11 4 11H9C10.1046 11 11 10.1046 11 9V4C11 2.89543 10.1046 2 9 2Z" fill="white"/>
+                            <path opacity="0.3" d="M20 2H15C13.8954 2 13 2.89543 13 4V9C13 10.1046 13.8954 11 15 11H20C21.1046 11 22 10.1046 22 9V4C22 2.89543 21.1046 2 20 2Z" fill="white"/>
+                            <path opacity="0.3" d="M20 13H15C13.8954 13 13 13.8954 13 15V20C13 21.1046 13.8954 22 15 22H20C21.1046 22 22 21.1046 22 20V15C22 13.8954 21.1046 13 20 13Z" fill="white"/>
+                            <path opacity="0.3" d="M9 13H4C2.89543 13 2 13.8954 2 15V20C2 21.1046 2.89543 22 4 22H9C10.1046 22 11 21.1046 11 20V15C11 13.8954 10.1046 13 9 13Z" fill="white"/>
+                            </svg>
+                            <span class="text">Inicio</span>
+                        </a>
+                    </li>
+                    <li ><a href="notas.html" class="active">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22Z" fill="white"/>
+                                <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="white"/>
+                                </svg>
+                                
+                            <span class="text">Registro de Notas</span>
+                        </a>
+                    </li>
+                    
+
+                    <li class="settings"><a href="#"><i class="bi bi-gear"></i><span class="text">Settings</span></a></li>
+                </ul>
+            </nav>
+           
+            <div class="account">
+                <div class="avatar">
+                    <img src="assets/img/profile.png" alt="">
+                </div>
+                <div class="name">
+                    <p class="mb-0 fw-regular">Hector Cantaro Segura <br><span>Docente</span></p>
+                    
+                </div>
+                <div class="logout">
+                    <a href="#"><i class="bi bi-box-arrow-in-right"></i></a>
+                </div>
+            </div>
+        </div>
+       
+
+        <div class="main">
+           
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <h4 class="text-uppercase">Registro de Notas</h4>
+                        <div>
+                            <p class="text-uppercase">
+
+                            </p>
+                        </div>
+                        <div class="card">
+                          <div class="card-header py-3">
+                               <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                                        <label class="btn btn-sm btn-outline-danger px-4" for="btnradio1"><i class="bi bi-pencil-square me-1"></i> Registrar</label>
+                                      
+                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                                        <label class="btn btn-sm btn-outline-danger px-4" for="btnradio2"><i class="bi bi-eye me-1"></i> Visualizar</label>
+                                      
+                                        
+                                      </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 d-flex justify-content-end btn-detail-notas">
+                                    <div class="dropdown me-3">
+                                        <a class="btn btn-sm btn-outline-danger px-3 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="bi bi-check2-square me-1"></i> Publicar calificaciones
+                                        </a>
+                                      
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                          <li><a class="dropdown-item" href="#">Action</a></li>
+                                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                      </div>
+                                    <button class="btn btn-sm btn-primary px-4">
+                                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.625 6.375H3.54167V3.54167H10.625M8.5 13.4583C7.93641 13.4583 7.39591 13.2345 6.9974 12.8359C6.59888 12.4374 6.375 11.8969 6.375 11.3333C6.375 10.7697 6.59888 10.2292 6.9974 9.83073C7.39591 9.43222 7.93641 9.20833 8.5 9.20833C9.06358 9.20833 9.60409 9.43222 10.0026 9.83073C10.4011 10.2292 10.625 10.7697 10.625 11.3333C10.625 11.8969 10.4011 12.4374 10.0026 12.8359C9.60409 13.2345 9.06358 13.4583 8.5 13.4583ZM12.0417 2.125H3.54167C2.75542 2.125 2.125 2.7625 2.125 3.54167V13.4583C2.125 13.8341 2.27426 14.1944 2.53993 14.4601C2.80561 14.7257 3.16594 14.875 3.54167 14.875H13.4583C13.8341 14.875 14.1944 14.7257 14.4601 14.4601C14.7257 14.1944 14.875 13.8341 14.875 13.4583V4.95833L12.0417 2.125Z" fill="white"/>
+</svg>
+
+                                        Guardar
+                                    </button>
+                                </div>
+                               </div>
+                          </div>
+                            <div class="card-body ">
+                                <div class=" ">
+                                    <form>
+                                        <div class="d-flex row">
+                                          <div class="form-group  col-sm-12 col-lg-4">
+                                              <label class="control-label">Periodo</label>
+                                              <select class="form-select form-select-sm form-select">
+                                                <option value="0">2022 - 01  (pregrado)</option>
+                                                <option value="">2022 - 01  (pregrado)</option>
+                                                <option value="">2022 - 01  (pregrado)</option>
+                                              </select>
+                                          </div>
+                                          <div class="form-group  col-sm-12 col-lg-4">
+                                            <label class="control-label">Asignatura</label>
+                                            <select class="form-select form-select-sm form-select">
+                                              <option value="0">BIOQUIMICA</option>
+                                              <option value="">BIOQUIMICA</option>
+                                              <option value="">BIOQUIMICA</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group  col-sm-12 col-lg-4">
+                                            <label class="control-label">Grupo</label>
+                                            <select class="form-select form-select-sm form-select">
+                                              <option value="0">2022 - MD1</option>
+                                              <option value="">2022 - MD1</option>
+                                              <option value="">2022 - MD1</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group  col-sm-12 col-lg-4 mt-3">
+                                            <label class="control-label">Evaluación</label>
+                                            <input type="text" id="justAnInputBox1" placeholder="Seleccionar evaluación" autocomplete="off"/>
+
+                                        </div>
+                                        <div class="form-group  col-sm-12 col-lg-4 mt-3">
+                                            <label class="control-label">Estado</label>
+                                            <select class="form-select form-select-sm form-select">
+                                              <option value="0"> Digitalizado</option>
+                                              <option value=""> Digitalizado</option>
+                                              <option value=""> Digitalizado</option>
+                                            </select>
+                                        </div>
+                                         <div class="col-sm-12 col-lg-4 d-flex align-items-end">
+                                            <button class="btn btn-sm btn-primary px-5">
+                                                Buscar
+                                            </button>
+                                         </div>
+                                          
+                                        </div>
+                                        
+                                    </form>
+
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="card">
+                        
+                        <div class="card-body">
+                            <div class="row d-flex align-items-center mb-3">
+                                <div class="col-sm-12 col-md-6">
+                                    <h6 class="text-uppercase fw-bold mb-0"> B0012 - BIOQUIMICA</h6>
+                                </div>
+                                <div class="col-sm-12 col-md-6 d-flex justify-content-end">
+                                    <button class="btn btn-sm btn-outline-danger px-4">
+                                        <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.0833 8.33333H2.375V10H11.0833V8.33333ZM11.0833 5H2.375V6.66667H11.0833V5ZM2.375 13.3333H7.91667V11.6667H2.375V13.3333ZM17.0208 9.58333L18.2083 10.8333L12.6667 16.6667L9.10417 12.9167L10.2917 11.6667L12.6667 14.1667L17.0208 9.58333Z" fill="#B01333"/>
+                                            </svg>
+                                             Ver Avance
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row my-3 d-flex align-items-center">
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="d-flex bg-light  px-2 py-1 rounded" style="width: fit-content;">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.3" d="M15.8335 18.3333H4.16683C3.66683 18.3333 3.3335 18 3.3335 17.5V2.49996C3.3335 1.99996 3.66683 1.66663 4.16683 1.66663H11.6668L16.6668 6.66663V17.5C16.6668 18 16.3335 18.3333 15.8335 18.3333Z" fill="#FFD500"/>
+                                            <path d="M12.4998 6.66663H16.6665L11.6665 1.66663V5.83329C11.6665 6.33329 11.9998 6.66663 12.4998 6.66663Z" fill="#FFD500"/>
+                                            <path opacity="0.3" d="M15.8335 18.3333H4.16683C3.66683 18.3333 3.3335 18 3.3335 17.5V2.49996C3.3335 1.99996 3.66683 1.66663 4.16683 1.66663H11.6668L16.6668 6.66663V17.5C16.6668 18 16.3335 18.3333 15.8335 18.3333Z" fill="#FFD500"/>
+                                            <path d="M12.4998 6.66663H16.6665L11.6665 1.66663V5.83329C11.6665 6.33329 11.9998 6.66663 12.4998 6.66663Z" fill="#FFD500"/>
+                                            </svg>
+                                            <p class="mb-0 ms-2 fw-medium fs-14">Evaluación: Practica 1 / 10-04-2021 al 17-04-2021</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="d-flex justify-content-end notas-div">
+                                        <ul class="d-flex justify-content-end info-notas">
+                                            <li class="me-4 text-danger">
+                                                <p class="mb-0 me-4  fw-regular text-black ">Nota mínima: 0</p>
+                                            </li>
+                                            <li class="me-4 text-primary">
+                                                <p class="mb-0 me-4 fw-regular text-black ">Nota mínima: 0</p>
+                                            </li>
+                                            <li class="text-warning">
+                                                <p class="mb-0  fw-regular text-black ">Nota mínima: 0</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                          
+                           
+                            <div class="table-schedule table-nota" >
+                                <table class="table table-striped col-sm-12 nowrap" id="notas" style="width:100%">
+                                    <thead class="table-light">
+                                      <th scope="col" style="text-align: left;">
+                                        <label class="container-checkbox">
+                                          <input type="checkbox">
+                                          <span class="checkmark"></span>
+                                        </label>
+                                      </th>
+
+                                        <th scope="col" style="text-align: left;">Código</th>
+                                        <th scope="col" style="text-align: left;">Alumno</th>
+
+                                        <th scope="col" style="text-align: left;">Carrera</th>
+                                        <th scope="col" style="text-align: left;">Fecha de Vencimiento</th>
+
+                                        <th scope="col" style="text-align: left;">Nota</th>
+                              
+                                        <th scope="col" style="text-align: left;">Estado Nota</th>
+                                        <th scope="col" style="text-align: left;">Estado Estudiante</th>
+                                       
+
+                                        
+                                    </thead>
+                                 <tbody>
+                                  <tr>
+                                    <th style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                      <label class="container-checkbox">
+                                      <input type="checkbox" checked>
+                                      <span class="checkmark"></span>
+                                    </label>
+                                  </th>
+                                    <td style="text-align: left">74050020</td>
+                                    <td  style="text-align: left;">Rojas Farro, Victor</td>
+                                    <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                    <td style="text-align: left;">18/08/2022</td>
+                                    <td style="text-align: left;"><input type="text" id="row-1-nota" name="row-1-nota" value="18.92"></td>
+                                    <td style="text-align: left;"><select size="1" id="row-1-office" name="row-1-office">
+                                      <option value="Edinburgh" selected="selected">
+                                          Digitado
+                                      </option>
+                                      <option value="London">
+                                          No digitado
+                                      </option>
+                                      
+                                  </select></td>
+                                    <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                  
+                                </tr>
+                                <tr>
+                                  <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                    <label class="container-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                </th>
+                                <td style="text-align: left">74050020</td>
+                                <td  style="text-align: left;">Sanchez Torres, Carlos Martin </td>
+                                <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                <td style="text-align: left;">18/08/2022</td>
+                                <td style="text-align: left;">18.92</td>
+                                <td style="text-align: left;">No digitado</td>
+                                <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                 
+                                
+                              </tr>
+                              <tr>
+                                <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                  <label class="container-checkbox">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                </label>
+                              </th>
+                              <td style="text-align: left">74050020</td>
+                              <td  style="text-align: left;">Perez Saldaña, Andres Octavio</td>
+                              <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                              <td style="text-align: left;">18/08/2022</td>
+                              <td style="text-align: left;">18.92</td>
+                              <td style="text-align: left;">No digitado</td>
+                              <td style="text-align: left;"><span class="activo">Activo</span></td>
+                               
+                              
+                              </tr>
+                              <tr>
+                                                  <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                                    <label class="container-checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="checkmark"></span>
+                                                  </label>
+                                                </th>
+                                                <td style="text-align: left">74050020</td>
+                                                <td  style="text-align: left;">Rojas Farro, Jose Luis</td>
+                                                <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                                <td style="text-align: left;">18/08/2022</td>
+                                                <td style="text-align: left;">18.92</td>
+                                                <td style="text-align: left;">No digitado</td>
+                                                <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                                
+                                                
+                              </tr>
+                              <tr>
+                                                <th style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                                  <label class="container-checkbox">
+                                                  <input type="checkbox">
+                                                  <span class="checkmark"></span>
+                                                </label>
+                                              </th>
+                                                <td style="text-align: left">74050020</td>
+                                                <td  style="text-align: left;">Rojas Farro, Victor</td>
+                                                <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                                <td style="text-align: left;">18/08/2022</td>
+                                                <td style="text-align: left;">18.92</td>
+                                                <td style="text-align: left;">No digitado</td>
+                                                <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                              
+                              </tr>
+                              <tr>
+                                              <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                                <label class="container-checkbox">
+                                                <input type="checkbox">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            </th>
+                                            <td style="text-align: left">74050020</td>
+                                            <td  style="text-align: left;">Sanchez Torres, Carlos Martin </td>
+                                            <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                            <td style="text-align: left;">18/08/2022</td>
+                                            <td style="text-align: left;">18.92</td>
+                                            <td style="text-align: left;">No digitado</td>
+                                            <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                            
+                                            
+                              </tr>
+                              <tr>
+                                            <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                              <label class="container-checkbox">
+                                              <input type="checkbox">
+                                              <span class="checkmark"></span>
+                                            </label>
+                                          </th>
+                                          <td style="text-align: left">74050020</td>
+                                          <td  style="text-align: left;">Perez Saldaña, Andres Octavio</td>
+                                          <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                          <td style="text-align: left;">18/08/2022</td>
+                                          <td style="text-align: left;">18.92</td>
+                                          <td style="text-align: left;">No digitado</td>
+                                          <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                          
+                                          
+                              </tr>
+                              <tr>
+                                          <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                            <label class="container-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                          </label>
+                                        </th>
+                                        <td style="text-align: left">74050020</td>
+                                        <td  style="text-align: left;">Rojas Farro, Jose Luis</td>
+                                        <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                        <td style="text-align: left;">18/08/2022</td>
+                                        <td style="text-align: left;">18.92</td>
+                                        <td style="text-align: left;">No digitado</td>
+                                        <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                        
+                                        
+                              </tr>
+                              <tr>
+                                        <th style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                          <label class="container-checkbox">
+                                          <input type="checkbox">
+                                          <span class="checkmark"></span>
+                                        </label>
+                                      </th>
+                                        <td style="text-align: left">74050020</td>
+                                        <td  style="text-align: left;">Rojas Farro, Victor</td>
+                                        <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                        <td style="text-align: left;">18/08/2022</td>
+                                        <td style="text-align: left;">18.92</td>
+                                        <td style="text-align: left;">No digitado</td>
+                                        <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                      
+                              </tr>
+                              <tr>
+                                      <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                        <label class="container-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                    </th>
+                                    <td style="text-align: left">74050020</td>
+                                    <td  style="text-align: left;">Sanchez Torres, Carlos Martin </td>
+                                    <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                    <td style="text-align: left;">18/08/2022</td>
+                                    <td style="text-align: left;">18.92</td>
+                                    <td style="text-align: left;">No digitado</td>
+                                    <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                    
+                                    
+                              </tr>
+                              <tr>
+                                    <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                      <label class="container-checkbox">
+                                      <input type="checkbox">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                  </th>
+                                  <td style="text-align: left">74050020</td>
+                                  <td  style="text-align: left;">Perez Saldaña, Andres Octavio</td>
+                                  <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                  <td style="text-align: left;">18/08/2022</td>
+                                  <td style="text-align: left;">18.92</td>
+                                  <td style="text-align: left;">No digitado</td>
+                                  <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                  
+                                  
+                              </tr>
+                              <tr>
+                                  <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                    <label class="container-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                </th>
+                                <td style="text-align: left">74050020</td>
+                                <td  style="text-align: left;">Rojas Farro, Jose Luis</td>
+                                <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                <td style="text-align: left;">18/08/2022</td>
+                                <td style="text-align: left;">18.92</td>
+                                <td style="text-align: left;">No digitado</td>
+                                <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                
+                                
+                              </tr>
+                              <tr>
+                                <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                  <label class="container-checkbox">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                </label>
+                              </th>
+                              <td style="text-align: left">74050020</td>
+                              <td  style="text-align: left;">Sanchez Torres, Carlos Martin </td>
+                              <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                              <td style="text-align: left;">18/08/2022</td>
+                              <td style="text-align: left;">18.92</td>
+                              <td style="text-align: left;">No digitado</td>
+                              <td style="text-align: left;"><span class="activo">Activo</span></td>
+                               
+                              
+                            </tr>
+                            <tr>
+                              <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                <label class="container-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                              </label>
+                            </th>
+                            <td style="text-align: left">74050020</td>
+                            <td  style="text-align: left;">Perez Saldaña, Andres Octavio</td>
+                            <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                            <td style="text-align: left;">18/08/2022</td>
+                            <td style="text-align: left;">18.92</td>
+                            <td style="text-align: left;">No digitado</td>
+                            <td style="text-align: left;"><span class="activo">Activo</span></td>
+                             
+                            
+                            </tr>
+                            <tr>
+                                                <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                                  <label class="container-checkbox">
+                                                  <input type="checkbox">
+                                                  <span class="checkmark"></span>
+                                                </label>
+                                              </th>
+                                              <td style="text-align: left">74050020</td>
+                                              <td  style="text-align: left;">Rojas Farro, Jose Luis</td>
+                                              <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                              <td style="text-align: left;">18/08/2022</td>
+                                              <td style="text-align: left;">18.92</td>
+                                              <td style="text-align: left;">No digitado</td>
+                                              <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                              
+                                              
+                            </tr>
+                            <tr>
+                                              <th style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                                <label class="container-checkbox">
+                                                <input type="checkbox">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                            </th>
+                                              <td style="text-align: left">74050020</td>
+                                              <td  style="text-align: left;">Rojas Farro, Victor</td>
+                                              <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                              <td style="text-align: left;">18/08/2022</td>
+                                              <td style="text-align: left;">18.92</td>
+                                              <td style="text-align: left;">No digitado</td>
+                                              <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                            
+                            </tr>
+                            <tr>
+                                            <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                              <label class="container-checkbox">
+                                              <input type="checkbox">
+                                              <span class="checkmark"></span>
+                                            </label>
+                                          </th>
+                                          <td style="text-align: left">74050020</td>
+                                          <td  style="text-align: left;">Sanchez Torres, Carlos Martin </td>
+                                          <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                          <td style="text-align: left;">18/08/2022</td>
+                                          <td style="text-align: left;">18.92</td>
+                                          <td style="text-align: left;">No digitado</td>
+                                          <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                          
+                                          
+                            </tr>
+                            <tr>
+                                          <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                            <label class="container-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                          </label>
+                                        </th>
+                                        <td style="text-align: left">74050020</td>
+                                        <td  style="text-align: left;">Perez Saldaña, Andres Octavio</td>
+                                        <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                        <td style="text-align: left;">18/08/2022</td>
+                                        <td style="text-align: left;">18.92</td>
+                                        <td style="text-align: left;">No digitado</td>
+                                        <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                        
+                                        
+                            </tr>
+                            <tr>
+                                        <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                          <label class="container-checkbox">
+                                          <input type="checkbox">
+                                          <span class="checkmark"></span>
+                                        </label>
+                                      </th>
+                                      <td style="text-align: left">74050020</td>
+                                      <td  style="text-align: left;">Rojas Farro, Jose Luis</td>
+                                      <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                      <td style="text-align: left;">18/08/2022</td>
+                                      <td style="text-align: left;">18.92</td>
+                                      <td style="text-align: left;">No digitado</td>
+                                      <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                      
+                                      
+                            </tr>
+                            <tr>
+                                      <th style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                        <label class="container-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                    </th>
+                                      <td style="text-align: left">74050020</td>
+                                      <td  style="text-align: left;">Rojas Farro, Victor</td>
+                                      <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                      <td style="text-align: left;">18/08/2022</td>
+                                      <td style="text-align: left;">18.92</td>
+                                      <td style="text-align: left;">No digitado</td>
+                                      <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                    
+                            </tr>
+                            <tr>
+                                    <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                      <label class="container-checkbox">
+                                      <input type="checkbox">
+                                      <span class="checkmark"></span>
+                                    </label>
+                                  </th>
+                                  <td style="text-align: left">74050020</td>
+                                  <td  style="text-align: left;">Sanchez Torres, Carlos Martin </td>
+                                  <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                  <td style="text-align: left;">18/08/2022</td>
+                                  <td style="text-align: left;">18.92</td>
+                                  <td style="text-align: left;">No digitado</td>
+                                  <td style="text-align: left;"><span class="retirado">Retirado</span></td>
+                                  
+                                  
+                            </tr>
+                            <tr>
+                                  <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                    <label class="container-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                </th>
+                                <td style="text-align: left">74050020</td>
+                                <td  style="text-align: left;">Perez Saldaña, Andres Octavio</td>
+                                <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                                <td style="text-align: left;">18/08/2022</td>
+                                <td style="text-align: left;">18.92</td>
+                                <td style="text-align: left;">No digitado</td>
+                                <td style="text-align: left;"><span class="activo">Activo</span></td>
+                                
+                                
+                            </tr>
+                            <tr>
+                                <th data-title="      " style="text-align: left;font-weight: 400;vertical-align: bottom;">
+                                  <label class="container-checkbox">
+                                  <input type="checkbox">
+                                  <span class="checkmark"></span>
+                                </label>
+                              </th>
+                              <td style="text-align: left">74050020</td>
+                              <td  style="text-align: left;">Rojas Farro, Jose Luis</td>
+                              <td style="text-align: left;">ADMINISTRACIÓN EN SALUD</td>
+                              <td style="text-align: left;">18/08/2022</td>
+                              <td style="text-align: left;">18.92</td>
+                              <td style="text-align: left;">No digitado</td>
+                              <td style="text-align: left;"><span class="activo">Activo</span></td>
+                              
+                              
+                            </tr>
+                                 </tbody>
+                                    
+                                  </table>
+                            
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                
+        </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer fixed">
+        <div>
+            <p>©2022 Universidad Peruana Cayetano Heredia</p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.2.4/js/dataTables.fixedHeader.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.3.0/js/responsive.bootstrap.min.js"></script>
+    <script src="js/comboTreePlugin.js"  type="text/javascript"></script>
+    <script src="js/sidebarmenu.js"></script>
+    <script src="js/customselect.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

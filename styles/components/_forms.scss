@@ -1,5 +1,8 @@
-.form-select{
+.form-select, select.form-control{
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23b01333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
     &:focus {   
         box-shadow: none;
         outline: none;
@@ -336,4 +339,144 @@ label.multi-select-menuitem {
       position: relative;
       top: -2px;
   }
+}
+
+
+
+
+.comboTreeWrapper{
+	position: relative;
+	text-align: left !important;
+}
+
+.comboTreeInputWrapper{
+	position: relative;
+}
+
+.comboTreeArrowBtn {
+	position: absolute;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    box-sizing: border-box;
+    border: 1px solid var(--ct-border-color);
+    border-radius: 0 var(--ct-border-radius) var(--ct-border-radius) 0;
+    background: white;
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    width: 31px;
+    border-left: 0;
+}
+.comboTreeArrowBtn:hover {
+    background: var(--ct-btn-hover);
+}
+.comboTreeArrowBtn:active {
+    background: var(--ct-btn-active);
+}
+.comboTreeInputBox:focus + .comboTreeArrowBtn {
+    color: var(--ct-btn-color);
+    border-top: 1px solid var(--upch-primary);
+    border-right: 1px solid var(--upch-primary);
+    border-bottom: 1px solid var(--upch-primary);
+}
+
+.comboTreeArrowBtnImg{
+    font-size: 1.25rem;
+    color: var(--upch-primary)
+}
+
+.comboTreeDropDownContainer {
+	display: none;
+	background: var(--ct-bg);
+	border: 1px solid var(--ct-border-color);
+	position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 999;
+	max-height: 250px;
+	overflow-y: auto;
+}
+
+.comboTreeDropDownContainer ul{
+	padding: 0px;
+	margin: 0;
+}
+
+.comboTreeDropDownContainer li{
+	list-style-type: none;
+	padding-left: 15px;
+}
+
+.comboTreeDropDownContainer li .selectable{
+	cursor: pointer;
+}
+
+.comboTreeDropDownContainer li .not-selectable{
+	cursor: not-allowed;
+}
+
+
+.comboTreeDropDownContainer li:hover{
+	background-color: var(--ct-tree-hover);}
+.comboTreeDropDownContainer li:hover ul{
+	background-color: var(--ct-bg)}
+.comboTreeDropDownContainer li span.comboTreeItemTitle.comboTreeItemHover,
+.comboTreeDropDownContainer label.comboTreeItemHover
+{
+	background-color: var(--upch-primary);
+	color: var(--ct-bg);
+    border-radius: 2px;
+}
+
+span.comboTreeItemTitle, .comboTreeDropDownContainer .selectAll{
+	display: block;
+    padding: 3px var(--ct-padding);
+}
+.comboTreeDropDownContainer label{
+    cursor: pointer;
+	width: 100%;
+    display: block;
+}
+.comboTreeDropDownContainer .comboTreeItemTitle input,
+.comboTreeDropDownContainer .selectAll input {
+	position: relative;
+    top: 2px;
+	margin: 0px 4px 0px 0px;
+}
+.comboTreeParentPlus{
+    position: relative;
+    left: -12px;
+    top: 4px;
+    width: 4px;
+    float: left;
+		cursor: pointer;
+}
+
+
+.comboTreeInputBox {
+	padding: var(--ct-padding);
+    border-radius: var(--ct-border-radius);
+    border: 1px solid var(--ct-border-color);
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 24px;
+    height: 32px;
+}
+.comboTreeInputBox:focus {
+    border: 1px solid var(--upch-primary);
+    outline-width: 0;
+}
+
+
+.multiplesFilter{
+	width: 100%;
+	padding: 5px;
+	box-sizing: border-box;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid var(--ct-border-color);
 }
